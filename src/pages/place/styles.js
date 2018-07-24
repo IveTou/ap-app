@@ -23,7 +23,7 @@ export const withIndexStyle = withStyles(theme => ({
   },
   avatar: {
     margin: theme.spacing.unit,
-    marginTop: theme.spacing.unit * -2,
+    marginTop: theme.spacing.unit * -7,
     width: theme.spacing.unit * 15,
     height: theme.spacing.unit * 15,
   },

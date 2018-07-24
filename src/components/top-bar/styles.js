@@ -1,20 +1,21 @@
 import { withStyles } from '@material-ui/core/styles';
 
+export const topbarHeight = 64;
+
 export const withIndexStyle = withStyles(theme => ({
   root: {
-    flexGrow: 1,
-    maxWidth: theme.spacing.unit * 125,
-    padding: `0 ${theme.spacing.unit * 3}px`,
-    margin: `0 auto`,
-    display: 'flex',
-    alignItems: 'center',
-  },
-  toolbar: {
-    justifyContent: 'space-between',
+    height: topbarHeight,
   },
   paper: {
     backgroundColor: theme.palette.background.default,
     boxShadow: theme.shadows[0],
+  },
+  toolbar: {
+    position: 'relative',
+    margin: '0 auto',
+    maxWidth: theme.spacing.unit * 125,
+    width: '100%',
+    justifyContent: 'space-between',
   },
   button: {
     margin: theme.spacing.unit,

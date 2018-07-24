@@ -20,7 +20,7 @@ const TopBar = ({ classes, logged }) => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.paper}>
+      <AppBar position="fixed" className={classes.paper}>
         <Toolbar className={classes.toolbar}>
           <Logo />
           <div>
