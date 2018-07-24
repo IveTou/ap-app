@@ -45,6 +45,7 @@ export const withIndexStyle = withStyles(theme => ({
   },
   button: {
     margin: theme.spacing.unit,
+    marginLeft: theme.spacing.unit * 4,
   },
   grid: {
   },
