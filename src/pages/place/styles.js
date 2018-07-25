@@ -8,6 +8,7 @@ export const withIndexStyle = withStyles(theme => ({
     margin: '0 auto',
     display: 'grid',
     alignItems: 'center',
+    marginBottom: theme.spacing.unit * 4,
   },
   header: {
     display: 'inline-flex',
@@ -50,5 +51,30 @@ export const withIndexStyle = withStyles(theme => ({
   tabBar: {
     backgroundColor: 'transparent',
     boxShadow: theme.shadows[0],
+  },
+}));
+
+export const withMainStyle = withStyles(theme => ({
+  root: {
+    overflow: 'hidden',
+    paddingTop: theme.spacing.unit * 2,
+  },
+  title: {
+    padding: `0 ${theme.spacing.unit}px`,
+  },
+  listItem: {
+    padding: 0,
+    paddingBottom: theme.spacing.unit,
+  },
+  listItemText: {
+    paddingLeft: theme.spacing.unit,
+  },
+  avatar: {
+    height: theme.spacing.unit * 3,
+    width: theme.spacing.unit * 3,
+  },
+  map: {
+    padding: theme.spacing.unit,
+    paddingRight: 0,
   },
 }));
