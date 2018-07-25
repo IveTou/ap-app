@@ -9,13 +9,12 @@ import { withMainStyle } from './styles';
 const Main = ({ classes, content = {} }) => {
   const {
     avatar,
-    title,
+    name,
     description,
-    address,
+    location,
     openAt,
     categories,
     comments,
-    coordinates,
   } = content;
 
   return (
@@ -29,18 +28,18 @@ const Main = ({ classes, content = {} }) => {
             <ListItem className={classes.listItem}>
               <Avatar src={avatar} className={classes.avatar}/>
               <Typography variant="subheading" color="primary" className={classes.title}>
-                {title}
+                {name}
               </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
-              <Typography variant="body1" className={classes.listItemText}>{address}</Typography>
+              <Typography variant="body1" className={classes.listItemText}>{location.address}</Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
               <Typography variant="body1" className={classes.listItemText}>{openAt}</Typography>
             </ListItem>
           </List>
           <div className={classes.map}>
-            <Wrapper mini center={coordinates} centerMarker />
+            <Wrapper mini center={location.coordinates} centerMarker />
           </div>
         </Grid>
         <Grid item md={8} xs={12}>
@@ -73,12 +72,7 @@ const Main = ({ classes, content = {} }) => {
 
 Main.propTypes = {
   classes: PropTypes.object.isRequired,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  address: PropTypes.string,
-  openAt: PropTypes.string,
-  categories: PropTypes.array,
-  comments: PropTypes.object,
+  content: PropTypes.object,
 };
 
 export default withMainStyle(Main);

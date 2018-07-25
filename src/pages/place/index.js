@@ -12,15 +12,17 @@ import { withIndexStyle } from './styles';
 
 const pageInfo = {
   avatar: 'https://scontent.fssa2-1.fna.fbcdn.net/v/t1.0-9/32105083_1461921467240717_2863832073544663040_n.jpg?_nc_cat=0&oh=3c7f14d76ec0017e7025a183c3df36d5&oe=5BD73AD3',
-  title: 'Guhan\'s Cowork House',
+  name: 'Guhan\'s Cowork House',
   description: '<p>Guhan\'s Cowork House é um espaço especializado com projetos voltados para arte e cultura</p><p>Possui espaços pala palestras, reuniões, workshops, aulas e muito mais.</p>',
-  followers: 90,
+  followedBy: [ '9', '3', '12' ],
   categories: ['cowork','arte','cultura','louge','palestras'],
   facebook: 'https://www.facebook.com/guhanmandarim/',
   instagram: 'https://www.instagram.com/guhanmandarim/',
-  address: 'Largo da dinha, Rio Vermelho, Salvador - BA',
+  location: {
+    address: 'Largo da dinha, Rio Vermelho, Salvador - BA',
+    coordinates: { lat: -13.011441, lng: -38.491617 },
+  },
   openAt: 'Aberto às terças e quintas, das 14h às 19h',
-  coordinates: { lat: -13.011441, lng: -38.491617 },
 };
 
 class Place extends React.Component {
@@ -40,18 +42,23 @@ class Place extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { avatar, title, followers, facebook, instagram } = pageInfo;
+    const { avatar, name, followedBy, facebook, instagram } = pageInfo;
 
     return (
       <div className={classes.root}>
         <div className={classes.header}>
-          <Avatar alt={title} src={avatar} className={classes.avatar} />
+          <Avatar alt={name} src={avatar} className={classes.avatar} />
           <div className={classes.headerInfo}>
-            <Typography className={classes.title}>{title}</Typography>
+            <Typography className={classes.title}>{name}</Typography>
             <div className={classes.stats}>
               <Rating />
-              <Typography align="center" variant="body1" color="primary">
-                {`${followers} seguidores`}
+              <Typography
+                align="center"
+                variant="body1"
+                color="primary"
+                className={classes.followers}
+              >
+                {`${followedBy.length} seguidores`}
               </Typography>
             </div>
             <div className={classes.action}>

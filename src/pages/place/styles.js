@@ -14,9 +14,11 @@ export const withIndexStyle = withStyles(theme => ({
     display: 'inline-flex',
     alignItems: 'center',
     flexGrow: 1,
-    margin: `${theme.spacing.unit * 6}px 0`,
+    marginTop: theme.spacing.unit * 5,
+    marginBottom: theme.spacing.unit * 2,
     [theme.breakpoints.down('sm')]: {
-      margin: `${theme.spacing.unit * 4}px 0`,
+      marginTop: theme.spacing.unit * 4,
+      marginBottom: theme.spacing.unit,
     }
   },
   headerInfo: {
@@ -31,7 +33,9 @@ export const withIndexStyle = withStyles(theme => ({
   stats: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+  },
+  followers: {
+    marginLeft: theme.spacing.unit * 2,
   },
   action: {
     display: 'flex',
@@ -46,7 +50,7 @@ export const withIndexStyle = withStyles(theme => ({
   },
   button: {
     margin: theme.spacing.unit,
-    marginLeft: theme.spacing.unit * 4,
+    marginLeft: theme.spacing.unit * 2,
   },
   tabBar: {
     backgroundColor: 'transparent',
