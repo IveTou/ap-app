@@ -48,9 +48,9 @@ class Place extends React.Component {
               </Typography>
             </div>
             <div className={classes.action}>
-              <Facebook url={pageInfo.facebook}/>
-              <Instagram url={pageInfo.Instagram}/>
-              <Linkedin url={pageInfo.Instagram}/>
+              <Facebook url={pageInfo.facebook} size={32} />
+              <Instagram url={pageInfo.instagram} size={32} />
+              <Linkedin url={pageInfo.instagram} size={32} />
               <Button variant="outlined" size="small" color="primary" className={classes.button}>
                 Seguir
               </Button>

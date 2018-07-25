@@ -1,12 +1,8 @@
 import { withStyles } from '@material-ui/core/styles';
 
 export const withIndexStyle = withStyles(theme => ({
-  root: {
-    marginTop: theme.spacing.unit / 2,
-  },
   svg: {
-    width: theme.spacing.unit * 3,
-    height: theme.spacing.unit * 3,
+    height: theme.spacing.unit * 5,
     margin: theme.spacing.unit,
   },
   path: {
