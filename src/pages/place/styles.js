@@ -6,7 +6,7 @@ export const withIndexStyle = withStyles(theme => ({
     maxWidth: theme.spacing.unit * 125,
     padding: `0 ${theme.spacing.unit * 3}px`,
     margin: '0 auto',
-    display: 'flex',
+    display: 'grid',
     alignItems: 'center',
   },
   header: {
@@ -47,6 +47,8 @@ export const withIndexStyle = withStyles(theme => ({
     margin: theme.spacing.unit,
     marginLeft: theme.spacing.unit * 4,
   },
-  grid: {
+  tabBar: {
+    backgroundColor: 'transparent',
+    boxShadow: theme.shadows[0],
   },
 }));

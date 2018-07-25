@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
+import SwipeableViews from 'react-swipeable-views';
 
-import { Avatar, AppBar, Button, Tab, Typography }  from '@material-ui/core/';
+import { Avatar, AppBar, Button, Tab, Tabs, Typography } from '@material-ui/core/';
 import Rating from '../../components/rating';
 import { Facebook, Instagram, Linkedin } from '../../components/social-icons';
 
@@ -20,7 +21,16 @@ class Place extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
+    this.state = { selectedTab: 0 };
   }
+
+  handleChangeTab = (event, selectedTab) => {
+    this.setState({ selectedTab });
+  };
+
+  handleChangeTabIndex = index => {
+    this.setState({ selectedTab: index });
+  };
 
   render() {
     const { classes } = this.props;
@@ -49,10 +59,28 @@ class Place extends React.Component {
         </div>
 
         <div>
-          <AppBar position="static" color="default">
+          <AppBar position="static" color="default" className={classes.tabBar}>
+            <Tabs
+              indicatorColor="primary"
+              textColor="primary"
+              value={this.state.selectedTab}
+              onChange={this.handleChangeTab}
+            >
+              <Tab label="Principal" />
+              <Tab label="Eventos" />
+              <Tab label="Fotos" />
+            </Tabs>
           </AppBar>
+          <SwipeableViews
+            axis="x"
+            index={this.state.selectedTab}
+            onChangeIndex={this.handleChangeTabIndex}
+          >
+            <div>Princi</div>
+            <div>Even</div>
+            <div>Fot</div>
+          </SwipeableViews>
         </div>
-
       </div>
     );
   }
