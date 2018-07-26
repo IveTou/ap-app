@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Switch, Route } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import TopBar from './components/top-bar';
@@ -13,7 +14,9 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <TopBar />
-        <Place />
+          <Switch>
+            <Route exact path="/p" component={Place} />
+          </Switch>
         <Footer />
       </MuiThemeProvider>
     );
