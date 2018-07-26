@@ -5,6 +5,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import TopBar from './components/top-bar';
 import Place from './pages/place';
+import Login from './pages/login';
 import Footer from './components/footer';
 import { theme } from './mui/theme';
 
@@ -15,6 +16,7 @@ class App extends Component {
         <CssBaseline />
         <TopBar />
           <Switch>
+            <Route exact path="/login" component={Login} />
             <Route exact path="/p" component={Place} />
           </Switch>
         <Footer />

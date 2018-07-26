@@ -24,7 +24,13 @@ const TopBar = ({ classes, logged }) => {
         <Toolbar className={classes.toolbar}>
           <Logo />
           <div>
-            <Button size="small" color="primary" className={classes.button}>entrar</Button>
+            <Button
+              size="small"
+              color="primary"
+              className={classes.button}
+            >
+              entrar
+            </Button>
             <Button
               size="small"
               variant="outlined"
