@@ -20,17 +20,5 @@ export const theme = createMuiTheme({
     fontWeightLarge: 700,
   },
   overrides: {
-    MuiInput: {
-      inkbar: {
-        '&:after': {
-          backgroundColor: blue[500],
-        },
-      },
-    },
-    MuiFormLabel: {
-      focused: {
-        color: blue[500],
-      }
-    },
   },
 });
