@@ -10,7 +10,7 @@ import { withIndexStyle } from './styles';
 const defaultContent = {
   visible: true,
   title: 'ERA Games',
-  description: 'Conheça o ESCAPE subversão, o nosso mais novo live game',
+  description: 'Conheça o ESCAPE Subversão, o nosso mais novo live game',
   flyer: `${config.ASSETS_BASE_URI}/${config.ASSETS_BANNERS_PATH}/escape.jpg`,
   url: '/',
   place: '',

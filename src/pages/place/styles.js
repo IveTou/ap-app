@@ -1,4 +1,5 @@
 import { withStyles } from '@material-ui/core/styles';
+import { deepOrange } from '@material-ui/core/colors';
 
 export const withIndexStyle = withStyles(theme => ({
   root: {
@@ -94,8 +95,14 @@ export const withGalleryStyle = withStyles(theme => ({
   grid: {
     height: theme.spacing.unit * 50,
     justifyContent: 'space-evenly',
+    '&::-webkit-scrollbar': {
+      width: theme.spacing.unit,
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: deepOrange[500],
+    },
   },
   tile: {
     marginBottom: theme.spacing.unit * 2,
-  }
+  },
 }));
