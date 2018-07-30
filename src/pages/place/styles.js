@@ -82,3 +82,20 @@ export const withMainStyle = withStyles(theme => ({
     paddingRight: 0,
   },
 }));
+
+export const withGalleryStyle = withStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    paddingTop: theme.spacing.unit * 2,
+  },
+  grid: {
+    height: theme.spacing.unit * 50,
+    justifyContent: 'space-evenly',
+  },
+  tile: {
+    marginBottom: theme.spacing.unit * 2,
+  }
+}));
