@@ -106,3 +106,12 @@ export const withGalleryStyle = withStyles(theme => ({
     marginBottom: theme.spacing.unit * 2,
   },
 }));
+export const withEventsStyle = withStyles(theme => ({
+  root: {
+    overflow: 'hidden',
+    paddingTop: theme.spacing.unit * 2,
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+}));

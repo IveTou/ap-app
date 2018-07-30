@@ -12,6 +12,7 @@
     "react": "^16.4.1",
     "react-apollo": "^2.1.9",
     "react-autobind": "^1.0.6",
+    "react-calendar": "^2.16.1",
     "react-dom": "^16.4.1",
     "react-google-maps": "^9.4.5",
     "react-images": "^0.5.19",

@@ -9,6 +9,7 @@ import { Facebook, Instagram, Linkedin } from '../../components/social-icons';
 
 import Main from './main';
 import Gallery from './gallery';
+import Events from './events';
 import { pageInfo } from './page-info';
 import { withIndexStyle } from './styles';
 
@@ -79,7 +80,7 @@ class Place extends React.Component {
             onChangeIndex={this.handleChangeTabIndex}
           >
             <Main content={pageInfo} />
-            <div>Event</div>
+            <Events content={pageInfo} />
             <Gallery content={pageInfo} />
           </SwipeableViews>
         </div>
