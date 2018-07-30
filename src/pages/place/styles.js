@@ -8,7 +8,7 @@ export const withIndexStyle = withStyles(theme => ({
     margin: '0 auto',
     display: 'grid',
     alignItems: 'center',
-    marginBottom: theme.spacing.unit * 4,
+    marginBottom: theme.spacing.unit * 8,
   },
   header: {
     display: 'inline-flex',

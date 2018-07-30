@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
+import { withRouter } from 'react-router';
 
 import {
   AppBar,
@@ -16,7 +17,7 @@ import Logo from '../logo';
 
 import { withIndexStyle } from './styles';
 
-const TopBar = ({ classes, logged }) => {
+const TopBar = ({ classes, history, logged }) => {
 
   return (
     <div className={classes.root}>
@@ -24,14 +25,14 @@ const TopBar = ({ classes, logged }) => {
         <Toolbar className={classes.toolbar}>
           <Logo />
           <div>
-            <Button size="small" color="primary" className={classes.button}>entrar</Button>
             <Button
               size="small"
-              variant="outlined"
+              variant="contained"
               color="primary"
               className={classes.button}
+              onClick={() => { history.push(`/login`) }}
             >
-              cadastro
+             entrar
             </Button>
           </div>
         </Toolbar>
@@ -45,4 +46,4 @@ TopBar.propTypes = {
   logged: PropTypes.bool,
 };
 
-export default withIndexStyle(TopBar);
+export default withRouter(withIndexStyle(TopBar));
