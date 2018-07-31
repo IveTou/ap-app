@@ -21,7 +21,7 @@ const Banner = ({ classes, content = defaultContent }) => {
   const { visible, title, description, flyer, url, place, time } = content;
 
   return(
-    <a className={classes.wrapper} href={url} style={{ backgroundImage: `url('${flyer}')` }} >
+    <a className={classes.wrapper} href={url} style={{ backgroundImage: `url('${flyer}')` }}>
       <div className={classes.overlay} >
         <Typography
           className={classes.title}

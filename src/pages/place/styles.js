@@ -15,11 +15,11 @@ export const withIndexStyle = withStyles(theme => ({
     display: 'inline-flex',
     alignItems: 'center',
     flexGrow: 1,
-    marginTop: theme.spacing.unit * 5,
-    marginBottom: theme.spacing.unit * 2,
+    paddingTop: theme.spacing.unit * 5,
+    paddingBottom: theme.spacing.unit * 2,
     [theme.breakpoints.down('sm')]: {
-      marginTop: theme.spacing.unit * 4,
-      marginBottom: theme.spacing.unit,
+      paddingTop: theme.spacing.unit * 4,
+      paddingBottom: theme.spacing.unit,
     }
   },
   headerInfo: {
@@ -115,6 +115,7 @@ export const withEventsStyle = withStyles(theme => ({
   calendar: {
     margin: '0 auto',
     width: 'unset',
-    maxWidth: theme.spacing.unit * 37,
+    maxWidth: theme.spacing.unit * 38,
+    padding: theme.spacing.unit,
   }
 }));

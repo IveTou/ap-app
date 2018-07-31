@@ -21,7 +21,7 @@ class Events extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={24}>
+        <Grid container spacing={16}>
           <Grid item md={8} xs={12}>
             <EventCard asButton event={events[0]} />
           </Grid>
