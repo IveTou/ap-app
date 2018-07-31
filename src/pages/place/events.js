@@ -4,6 +4,8 @@ import autoBind from 'react-autobind';
 import { Grid, Icon, Typography } from '@material-ui/core/';
 import Calendar from 'react-calendar';
 
+import EventCard from '../../components/event-card';
+
 import { withEventsStyle } from './styles';
 
 class Events extends React.Component {
@@ -21,6 +23,7 @@ class Events extends React.Component {
       <div className={classes.root}>
         <Grid container spacing={24}>
           <Grid item md={8} xs={12}>
+            <EventCard asButton event={events[0]} />
           </Grid>
           <Grid item md={4} xs={12}>
             <Calendar

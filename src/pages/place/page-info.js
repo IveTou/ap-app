@@ -133,4 +133,46 @@ export const pageInfo = {
       url: 'https://picsum.photos/600?image=19',
     },
   ],
+  events: [
+    {
+      name: 'Eventão do Robyssão',
+      location: {
+        address: 'Casa do Serjão',
+        coordinates: { lat: 14.2, lng: 11 },
+      },
+      flyer: 'https://picsum.photos/200?image=11',
+      start: new Date(),
+      end: new Date(),
+    },
+    {
+      name: 'Bailo do Momento na casa do Juca',
+      location: {
+        address: 'Casa do Casa do Juca',
+        coordinates: { lat: 14.2, lng: 11 },
+      },
+      flyer: 'https://picsum.photos/200?image=31',
+      start: new Date(),
+      end: new Date(),
+    },
+    {
+      name: 'O que tem pra hoje',
+      location: {
+        address: 'Na sua casa',
+        coordinates: { lat: 14.2, lng: 11 },
+      },
+      flyer: 'https://picsum.photos/200?image=19',
+      start: new Date(),
+      end: new Date(),
+    },
+    {
+      name: 'Sétima tabela do quarto andar',
+      location: {
+        address: 'Quarto andar, sétima tabela',
+        coordinates: { lat: 14.2, lng: 11 },
+      },
+      flyer: 'https://picsum.photos/200?image=111',
+      start: new Date(),
+      end: new Date(),
+    },
+  ]
 };
