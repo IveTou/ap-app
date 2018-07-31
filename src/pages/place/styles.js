@@ -86,15 +86,13 @@ export const withMainStyle = withStyles(theme => ({
 
 export const withGalleryStyle = withStyles(theme => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
     overflow: 'hidden',
     paddingTop: theme.spacing.unit * 2,
   },
   grid: {
+    width: '100%',
     height: theme.spacing.unit * 50,
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     '&::-webkit-scrollbar': {
       width: theme.spacing.unit,
     },
@@ -114,4 +112,9 @@ export const withEventsStyle = withStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
+  calendar: {
+    margin: '0 auto',
+    width: 'unset',
+    maxWidth: theme.spacing.unit * 37,
+  }
 }));

@@ -19,11 +19,12 @@ class Events extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Grid container>
+        <Grid container spacing={24}>
           <Grid item md={8} xs={12}>
           </Grid>
           <Grid item md={4} xs={12}>
             <Calendar
+              className={classes.calendar}
               locale="pt-BR"
               nextLabel={<Icon>chevron_right</Icon>}
               next2Label={<Icon>last_page</Icon>}

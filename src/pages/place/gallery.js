@@ -50,7 +50,7 @@ class Gallery extends React.Component {
             currentImage={this.state.currentImage}
           />
         }
-        <GridList className={classes.grid} cellHeight="auto" spacing={8} cols={4}>
+        <GridList className={classes.grid} spacing={24} cols={4}>
           {photos.map((tile, index) => (
             <GridListTile className={classes.tile} key={index} style={{ width: 'auto' }}>
               <img
