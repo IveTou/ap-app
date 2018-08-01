@@ -118,6 +118,10 @@ export const withEventsStyle = withStyles(theme => ({
   },
   grid: {
     width: '100%',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('xs')]: {
+      padding: `0 ${theme.spacing.unit * 4}px`,
+    },
     '&::-webkit-scrollbar': {
       width: theme.spacing.unit,
     },

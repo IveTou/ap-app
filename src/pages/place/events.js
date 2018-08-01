@@ -22,7 +22,7 @@ class Events extends React.Component {
 
   periodFormat(start, end) {
     const isnSame = end && start.format('LL') !== end.format('LL');
-    const first = isnSame && start.format('Y') === end.format('Y')
+    const first = isnSame && start.format('MMY') === end.format('MMY')
       ? start.format('D')
       : start.format('LL');
     const last = isnSame ? end.format('LL'): '';
