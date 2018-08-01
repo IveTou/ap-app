@@ -4,7 +4,6 @@ import Lightbox from 'react-images';
 import autoBind from 'react-autobind';
 
 import { GridList, GridListTile } from '@material-ui/core/';
-import { map } from 'lodash';
 
 import { withGalleryStyle } from './styles';
 

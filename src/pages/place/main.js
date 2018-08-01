@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Avatar, Grid, Icon, List, ListItem, ListItemText, Typography } from '@material-ui/core/';
+import { Avatar, Grid, List, ListItem, Typography } from '@material-ui/core/';
 
 import Banner from '../../components/banner';
 import Wrapper from '../../components/map';

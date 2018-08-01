@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import { Icon, Typography } from '@material-ui/core/';
 
 import Calendar from '../calendar';
@@ -12,7 +11,7 @@ const defaultContent = {
   title: 'ERA Games',
   description: 'Conheça o ESCAPE Subversão, o nosso mais novo live game',
   flyer: `${config.ASSETS_BASE_URI}/${config.ASSETS_BANNERS_PATH}/escape.jpg`,
-  url: '/',
+  url: 'https://www.facebook.com/jogueescape/',
   place: '',
   time: '',
 };
@@ -22,24 +21,45 @@ const Banner = ({ classes, content = defaultContent }) => {
 
   return(
     <a className={classes.wrapper} href={url} style={{ backgroundImage: `url('${flyer}')` }}>
-      <div className={classes.overlay} >
-        <Typography
-          className={classes.title}
-          color="inherit"
-          paragraph
-          gutterBottom
-        >
-          {title}
-        </Typography>
-        <Typography
-          className={classes.description}
-          color="inherit"
-          paragraph
-          gutterBottom
-        >
-          {description}
-        </Typography>
-      </div>
+      {visible && (
+        <div className={classes.overlay} >
+          <Typography
+            className={classes.title}
+            color="inherit"
+            paragraph
+            gutterBottom
+          >
+            {title}
+          </Typography>
+          <Typography
+            className={classes.description}
+            color="inherit"
+            paragraph
+            gutterBottom
+          >
+            {description}
+          </Typography>
+        </div>
+      )}
+      {place && time && (
+        <div>
+          <Calendar className={classes.calendar} />
+          <div className={classes.timePlace}>
+            <div>
+              <Icon className={classes.icon}>place</Icon>
+              <Typography variant="subheading" color="inherit" noWrap>
+                {place}
+              </Typography>
+            </div>
+            <div>
+              <Icon className={classes.icon}>schedule</Icon>
+              <Typography variant="subheading" color="inherit">
+                {time}
+              </Typography>
+            </div>
+          </div>
+        </div>
+      )}
     </a>
   );
 }

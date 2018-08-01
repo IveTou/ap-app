@@ -9,7 +9,9 @@ const Logo = ({ classes }) => {
   const imgSrc = `${config.ASSETS_BASE_URI}/core/site/orange_pin.png`;
 
   return (
-    <img className={classes.root} alt="toakee logo" src={imgSrc} />
+    <Link to='/'>
+      <img className={classes.root} alt="toakee logo" src={imgSrc} />
+    </Link>
   );
 };
 

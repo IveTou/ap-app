@@ -1,17 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import autoBind from 'react-autobind';
 import { withRouter } from 'react-router';
 
-import {
-  AppBar,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Typography
-} from '@material-ui/core/';
+import { AppBar, Button, Toolbar } from '@material-ui/core/';
 
 import Logo from '../logo';
 

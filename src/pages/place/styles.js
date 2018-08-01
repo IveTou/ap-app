@@ -111,7 +111,7 @@ export const withEventsStyle = withStyles(theme => ({
     paddingTop: theme.spacing.unit * 2,
   },
   calendar: {
-    margin: '0 auto',
+    margin: `${theme.spacing.unit * 5}px auto`,
     width: 'unset',
     maxWidth: theme.spacing.unit * 38,
     padding: theme.spacing.unit,
