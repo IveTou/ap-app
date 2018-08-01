@@ -205,3 +205,15 @@ export const pageInfo = {
     },
   ],
 };
+
+export const categoryCloud = [
+  { value: "Game", count: 25 }, { value: "Subversão", count: 18 },
+  { value: "Toakee", count: 38 }, { value: "Teatro", count: 30 },
+  { value: "Escape", count: 28 }, { value: "Express.js", count: 25 },
+  { value: "Arte", count: 33 }, { value: "Colaborativo", count: 20 },
+  { value: "Live", count: 22 }, { value: "Rio Vermelho", count: 7 },
+  { value: "Cultura", count: 25 }, { value: "Guhan", count: 15 },
+  { value: "Diversão", count: 17 }, { value: "Mandarim", count: 27 },
+  { value: "Cowork", count: 30 }, { value: "Chinês", count: 15 },
+  { value: "Era", count: 30 }, { value: "Aulas", count: 11 },
+];

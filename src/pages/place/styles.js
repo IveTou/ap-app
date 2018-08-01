@@ -84,7 +84,12 @@ export const withMainStyle = withStyles(theme => ({
   },
   comments: {
     marginTop: theme.spacing.unit * 5,
-  }
+  },
+  tagCloud: {
+    paddingTop: theme.spacing.unit * 2,
+    textAlign: 'center',
+    fontFamily: 'sans-serif',
+  },
 }));
 
 export const withGalleryStyle = withStyles(theme => ({

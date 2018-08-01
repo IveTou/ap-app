@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Avatar, Grid, List, ListItem, Typography } from '@material-ui/core/';
+import { TagCloud } from "react-tagcloud";
 
 import Banner from '../../components/banner';
 import Wrapper from '../../components/map';
 import Comment from '../../components/comment';
 import { withMainStyle } from './styles';
+
+import { categoryCloud } from './page-info';
 
 const Main = ({ classes, showComments, content = {} }) => {
   const {
@@ -58,8 +61,8 @@ const Main = ({ classes, showComments, content = {} }) => {
                 Comentários
               </Typography>
               <List>
-                {comments.map(({ owner, comment, time })=> (
-                  <Comment owner={owner} comment={comment} time={time} />
+                {comments.map(({ owner, comment, time }, index )=> (
+                  <Comment owner={owner} comment={comment} time={time} key={index} />
                 ))}
               </List>
             </div>
@@ -69,9 +72,17 @@ const Main = ({ classes, showComments, content = {} }) => {
           <Typography variant="subheading" color="primary">
            #TAGS
           </Typography>
-          <Typography align="inherit" component="div">
-            {categories}
-          </Typography>
+          <TagCloud
+            className={classes.tagCloud}
+            minSize={12}
+            maxSize={35}
+            colorOptions={{
+              luminosity: 'dark',
+              hue: 'orange',
+            }}
+            tags={categoryCloud}
+            onClick={tag => console.log('clicking on tag:', tag)}
+          />
         </Grid>
       </Grid>
     </div>
