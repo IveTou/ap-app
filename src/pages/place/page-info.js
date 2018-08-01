@@ -174,5 +174,34 @@ export const pageInfo = {
       start: new Date(),
       end: new Date(),
     },
-  ]
+  ],
+  comments:[
+    {
+      owner: {
+        name: 'Ive',
+        avatar: 'https://scontent.fssa2-1.fna.fbcdn.net/v/t1.0-9/22406030_1828987463782668_6507704820591627632_n.jpg?_nc_cat=0&oh=8fa698d02d7fcbe0ae9a3b92ec7a6da2&oe=5BD1ECCE',
+        profileLink: '/',
+      },
+      comment: 'Mais ou menos... MAIS OU MENOS!!',
+      time: new Date(),
+    },
+    {
+      owner: {
+        name: 'Cid',
+        avatar: 'https://scontent.fssa2-1.fna.fbcdn.net/v/t1.0-9/27657307_1877928355582157_4106336216165936518_n.jpg?_nc_cat=0&oh=5d0498d8397bfe1bbb5329a9bb1fea0d&oe=5C07A14C',
+        profileLink: '/',
+      },
+      comment: 'Honestamente eu não sei o que pensar. Parece desonestidade intelectual. Lamentável!!',
+      time: new Date(),
+    },
+    {
+      owner: {
+        name: 'Rhuan',
+        avatar: 'https://scontent.fssa2-1.fna.fbcdn.net/v/t1.0-9/16807438_10211929869459216_1899287089718731055_n.jpg?_nc_cat=0&oh=498646646d6c633398f93b3b0795488d&oe=5BD10DDF',
+        profileLink: '/',
+      },
+      comment: 'Sensacional!! Vamo ficar rico!!',
+      time: new Date(),
+    },
+  ],
 };

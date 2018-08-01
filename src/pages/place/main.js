@@ -4,9 +4,10 @@ import { Avatar, Grid, List, ListItem, Typography } from '@material-ui/core/';
 
 import Banner from '../../components/banner';
 import Wrapper from '../../components/map';
+import Comment from '../../components/comment';
 import { withMainStyle } from './styles';
 
-const Main = ({ classes, content = {} }) => {
+const Main = ({ classes, showComments, content = {} }) => {
   const {
     avatar,
     name,
@@ -14,7 +15,7 @@ const Main = ({ classes, content = {} }) => {
     location,
     openAt,
     categories,
-    comments,
+    comments = [],
   } = content;
 
   return (
@@ -51,11 +52,18 @@ const Main = ({ classes, content = {} }) => {
               <div dangerouslySetInnerHTML={{ __html: description }} />
             </Typography>
           </div>
-          <div>
-            <Typography variant="subheading" color="primary">
-             Comentários
-            </Typography>
-          </div>
+          {showComments && comments.length && (
+            <div className={classes.comments}>
+              <Typography variant="subheading" color="primary">
+                Comentários
+              </Typography>
+              <List>
+                {comments.map(({ owner, comment, time })=> (
+                  <Comment owner={owner} comment={comment} time={time} />
+                ))}
+              </List>
+            </div>
+          )}
         </Grid>
         <Grid item md={4} xs={12}>
           <Typography variant="subheading" color="primary">
@@ -73,6 +81,7 @@ const Main = ({ classes, content = {} }) => {
 Main.propTypes = {
   classes: PropTypes.object.isRequired,
   content: PropTypes.object,
+  showComments: PropTypes.bool,
 };
 
 export default withMainStyle(Main);

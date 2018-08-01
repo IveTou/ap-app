@@ -79,7 +79,7 @@ class Place extends React.Component {
             index={this.state.selectedTab}
             onChangeIndex={this.handleChangeTabIndex}
           >
-            <Main content={pageInfo} />
+            <Main content={pageInfo} showComments />
             <Events content={pageInfo} />
             <Gallery content={pageInfo} />
           </SwipeableViews>

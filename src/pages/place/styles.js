@@ -82,6 +82,9 @@ export const withMainStyle = withStyles(theme => ({
     padding: theme.spacing.unit,
     paddingRight: 0,
   },
+  comments: {
+    marginTop: theme.spacing.unit * 5,
+  }
 }));
 
 export const withGalleryStyle = withStyles(theme => ({
