@@ -4,7 +4,7 @@ import { deepOrange } from '@material-ui/core/colors';
 export const withIndexStyle = withStyles(theme => ({
   root: {
     flexGrow: 1,
-    maxWidth: theme.spacing.unit * 125,
+    maxWidth: theme.spacing.unit * 137,
     padding: `0 ${theme.spacing.unit * 3}px`,
     margin: '0 auto',
     display: 'grid',
@@ -104,18 +104,28 @@ export const withGalleryStyle = withStyles(theme => ({
     marginBottom: theme.spacing.unit * 2,
   },
 }));
+
 export const withEventsStyle = withStyles(theme => ({
   root: {
     overflow: 'hidden',
     paddingTop: theme.spacing.unit * 2,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
   },
   calendar: {
     margin: '0 auto',
     width: 'unset',
     maxWidth: theme.spacing.unit * 38,
     padding: theme.spacing.unit,
-  }
+  },
+  grid: {
+    width: '100%',
+    '&::-webkit-scrollbar': {
+      width: theme.spacing.unit,
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: deepOrange[500],
+    },
+  },
+  tile: {
+    marginBottom: theme.spacing.unit * 2,
+  },
 }));

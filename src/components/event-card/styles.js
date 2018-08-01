@@ -1,11 +1,18 @@
 import { withStyles } from '@material-ui/core/';
+import { blue } from '@material-ui/core/colors';
 
 const cardWidth = 30;
 const cardHeight = 27;
 const cardButtonHeight = 21;
+const cardButtonWidth= 24;
 
 export const withIndexStyle = withStyles(theme => ({
-  linkRoot: {
+  buttonRoot: {
+    '&:hover': {
+      backgroundColor: blue[100],
+    },
+  },
+  linkCard: {
     width: theme.spacing.unit * cardWidth,
     height: theme.spacing.unit * cardHeight,
     flex: '0 0 auto',
@@ -19,8 +26,10 @@ export const withIndexStyle = withStyles(theme => ({
       transform: 'scale(1.2)',
     },
   },
-  buttonRoot: {
+  buttonCard: {
     height: theme.spacing.unit * cardButtonHeight,
+    width: theme.spacing.unit * cardButtonWidth,
+    margin: 0,
     '& $cardContent': {
       display: "inline-flex",
     },
@@ -43,7 +52,6 @@ export const withIndexStyle = withStyles(theme => ({
   },
   cardContentHeader: {
     padding: [theme.spacing.unit / 2, 0].join('px '),
-    marginBottom: theme.spacing.unit / 2,
     overflow: 'hidden',
     maxHeight: theme.spacing.unit * 6,
     whiteSpace: 'normal',

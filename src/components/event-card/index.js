@@ -11,14 +11,15 @@ import Ribbon from '../ribbon';
 import { withIndexStyle } from './styles';
 
 const EventCard = ({ asButton, event, classes, onClick, to }) => {
-  const { name, location, place, flyer, start, end, status, discountLists = {} } = event;
+  const { name, location, place, flyer, start, end, status, discountLists = [] } = event;
   const startMoment = moment(start);
   const Component = asButton ? Button : Link;
   const rootClasses = classNames(classes.linkRoot, asButton && classes.buttonRoot);
+  const cardClasses = classNames(classes.linkCard, asButton && classes.buttonCard);
 
   return (
-    <Component to={to} onClick={onClick} >
-      <Card className={rootClasses}>
+    <Component to={to} onClick={onClick} className={rootClasses}>
+      <Card className={cardClasses}>
         <div className={classes.cardMedia}>
           <div
             className={classes.cardImage}
@@ -73,12 +74,7 @@ EventCard.propTypes = {
   classes: PropTypes.object,
   to: PropTypes.object,
   onClick: PropTypes.func,
-  event: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    place: PropTypes.object,
-    start: PropTypes.string,
-    flyer: PropTypes.string,
-  }),
+  event: PropTypes.object,
 };
 
 export default withIndexStyle(EventCard);

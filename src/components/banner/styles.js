@@ -7,7 +7,6 @@ export const withIndexStyle = withStyles(theme => ({
     backgroundColor: theme.palette.primary.light,
     width: '100%',
     height: theme.spacing.unit * 30,
-    backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     whiteSpace: 'nowrap',

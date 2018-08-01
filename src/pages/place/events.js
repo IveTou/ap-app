@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
-import { Grid, Icon, Typography } from '@material-ui/core/';
+import { Grid, GridList, GridListTile, Icon, Typography } from '@material-ui/core/';
 import Calendar from 'react-calendar';
 
 import EventCard from '../../components/event-card';
@@ -18,14 +18,24 @@ class Events extends React.Component {
   render() {
     const { classes, content = {} } = this.props;
     const { events } = content;
+    const { period } = this.state;
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={16}>
-          <Grid item md={8} xs={12}>
-            <EventCard asButton event={events[0]} />
+        <Grid container spacing={8}>
+          <Grid item md={9} xs={12}>
+            <Typography variant="headline" gutterBottom>
+              {period.start.toDateString()}
+            </Typography>
+            <GridList className={classes.grid} spacing={16} cols={3}>
+              {events.map((event, index) => (
+                <GridListTile className={classes.tile} key={index} style={{ width: 'auto' }}>
+                  <EventCard asButton event={event} />
+                </GridListTile>
+              ))}
+            </GridList>
           </Grid>
-          <Grid item md={4} xs={12}>
+          <Grid item md={3} xs={12}>
             <Calendar
               className={classes.calendar}
               locale="pt-BR"
