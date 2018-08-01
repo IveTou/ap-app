@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
+import moment from 'moment';
+import 'moment/locale/pt-br';
+
 import { Grid, GridList, GridListTile, Icon, Typography } from '@material-ui/core/';
 import Calendar from 'react-calendar';
 
@@ -8,11 +11,23 @@ import EventCard from '../../components/event-card';
 
 import { withEventsStyle } from './styles';
 
+moment.locale('pt-br');
+
 class Events extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
-    this.state = { period: { start:  new Date() ,end: '' } };
+    this.state = { period: { start:  moment(), end: '' } };
+  }
+
+  periodFormat(start, end) {
+    const isnSame = end && start.format('LL') !== end.format('LL');
+    const first = isnSame && start.format('Y') === end.format('Y')
+      ? start.format('D')
+      : start.format('LL');
+    const last = isnSame ? end.format('LL'): '';
+
+    return `${first} ${last && ` até ${last}`}`;
   }
 
   render() {
@@ -25,7 +40,7 @@ class Events extends React.Component {
         <Grid container spacing={8}>
           <Grid item md={9} xs={12}>
             <Typography variant="headline" gutterBottom>
-              {period.start.toDateString()}
+              {this.periodFormat(period.start, period.end)}
             </Typography>
             <GridList className={classes.grid} spacing={16} cols={3}>
               {events.map((event, index) => (
@@ -44,8 +59,9 @@ class Events extends React.Component {
               prevLabel={<Icon>chevron_left</Icon>}
               prev2Label={<Icon>first_page</Icon>}
               returnValue="range"
+              onChange={p => this.setState({ period: { start: moment(p[0]), end: moment(p[1]) } })}
+              onClickDay={d => this.setState({period: { start: moment(d)}})}
               selectRange
-              onChange={p => this.setState({ period: { start: p[0], end: p[1] } })}
             />
           </Grid>
         </Grid>

@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import moment from 'moment';
+import 'moment/locale/pt-br';
 import { Button, Card, CardContent, Typography, Icon } from '@material-ui/core/';
 
 import Calendar from '../calendar';
 import Ribbon from '../ribbon';
 
 import { withIndexStyle } from './styles';
+
+moment.locale('pt-br');
 
 const EventCard = ({ asButton, event, classes, onClick, to }) => {
   const { name, location, place, flyer, start, end, status, discountLists = [] } = event;
