@@ -166,4 +166,8 @@ export const withEventsStyle = withStyles(theme => ({
       display: 'none',
     }
   },
+  calendarPop: {
+    display: 'block',
+    margin: 0,
+  },
 }));
