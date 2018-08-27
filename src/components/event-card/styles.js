@@ -27,8 +27,8 @@ export const withIndexStyle = withStyles(theme => ({
     },
   },
   buttonCard: {
-    height: theme.spacing.unit * cardButtonHeight,
-    width: theme.spacing.unit * cardButtonWidth,
+    maxHeight: theme.spacing.unit * cardButtonHeight,
+    maxWidth: theme.spacing.unit * cardButtonWidth,
     margin: 0,
     '& $cardContent': {
       display: "inline-flex",

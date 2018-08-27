@@ -4,7 +4,7 @@ import autoBind from 'react-autobind';
 import moment from 'moment';
 import 'moment/locale/pt-br';
 
-import { Grid, GridList, GridListTile, Icon, Typography } from '@material-ui/core/';
+import { Grid, GridList, GridListTile, Icon, Button, Typography } from '@material-ui/core/';
 import Calendar from 'react-calendar';
 
 import EventCard from '../../components/event-card';
@@ -30,6 +30,23 @@ class Events extends React.Component {
     return `${first} ${last && ` até ${last}`}`;
   }
 
+  renderCalendar(classes) {
+    return (
+      <Calendar
+        className={classes.calendar}
+        locale="pt-BR"
+        nextLabel={<Icon>chevron_right</Icon>}
+        next2Label={<Icon>last_page</Icon>}
+        prevLabel={<Icon>chevron_left</Icon>}
+        prev2Label={<Icon>first_page</Icon>}
+        returnValue="range"
+        onChange={p => this.setState({ period: { start: moment(p[0]), end: moment(p[1]) } })}
+        onClickDay={d => this.setState({period: { start: moment(d)}})}
+        selectRange
+      />
+    );
+  }
+
   render() {
     const { classes, content = {} } = this.props;
     const { events } = content;
@@ -37,34 +54,30 @@ class Events extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={8}>
-          <Grid item md={9} xs={12}>
-            <Typography variant="headline" gutterBottom>
+        <div className={classes.cardsGrid}>
+          <div className={classes.title}>
+            <Typography variant="subheading">
               {this.periodFormat(period.start, period.end)}
             </Typography>
-            <GridList className={classes.grid} spacing={16} cols={3}>
-              {events.map((event, index) => (
-                <GridListTile className={classes.tile} key={index} style={{ width: 'auto' }}>
-                  <EventCard asButton event={event} />
-                </GridListTile>
-              ))}
-            </GridList>
-          </Grid>
-          <Grid item md={3} xs={12}>
-            <Calendar
-              className={classes.calendar}
-              locale="pt-BR"
-              nextLabel={<Icon>chevron_right</Icon>}
-              next2Label={<Icon>last_page</Icon>}
-              prevLabel={<Icon>chevron_left</Icon>}
-              prev2Label={<Icon>first_page</Icon>}
-              returnValue="range"
-              onChange={p => this.setState({ period: { start: moment(p[0]), end: moment(p[1]) } })}
-              onClickDay={d => this.setState({period: { start: moment(d)}})}
-              selectRange
-            />
-          </Grid>
-        </Grid>
+            <Button
+              variant="fab"
+              color="primary"
+              className={classes.button}
+              mini
+              aria-label="Calendar"
+            >
+              <Icon>date_range</Icon>
+            </Button>
+          </div>
+          <GridList className={classes.gridList} spacing={8} cols={3}>
+            {events.map((event, index) => (
+              <GridListTile className={classes.tile} key={index} style={{ width: 'auto' }}>
+                <EventCard asButton event={event} />
+              </GridListTile>
+            ))}
+          </GridList>
+        </div>
+        <div>{this.renderCalendar(classes)}</div>
       </div>
     );
   }
