@@ -23,32 +23,30 @@ const Login = ({ classes }) => {
       <div className={classes.background}>
         <svg width="500" height="350">
           <polygon 
-            id="orange-polygon1" 
+            id="topPolygon" 
             points="200,10 400,190 10,210" 
             style={{ fill: deepOrange[200] }} 
           />
-          <polygon 
-            id="orange-polygon2" 
-            points="300,349 400,189 10,209" 
-            style={{ fill: deepOrange[200] }} 
-          />
           <animate 
-            href="#orange-polygon2"
-            attributeName="points"
-            from="300,349 400,189 10,209"
-            to="400,189 10,209 300,349" 
-            dur="10s"
-            repeatCount="indefinite"
-            id="circ-anim"
-          />
-          <animate 
-            href="#orange-polygon1"
+            href="#topPolygon"
             attributeName="points"
             from="200,10 400,190 10,210"
             to="10,210 200,10 400,190" 
             dur="10s"
             repeatCount="indefinite" 
-            id="circ-anim"
+          />
+          <polygon 
+            id="bottomPolygon" 
+            points="300,349 400,189 10,209" 
+            style={{ fill: deepOrange[200] }} 
+          />
+          <animate 
+            href="#bottomPolygon"
+            attributeName="points"
+            from="300,349 400,189 10,209"
+            to="400,189 10,209 300,349" 
+            dur="10s"
+            repeatCount="indefinite"
           />
         </svg>
       </div> 
