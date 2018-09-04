@@ -16,7 +16,7 @@ export const withIndexStyle = withStyles(theme => ({
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
-    minWidth: theme.spacing.unit * 33,
+    minWidth: theme.spacing.unit * 38,
   },
   footer: {
     marginTop: theme.spacing.unit * 3,
