@@ -5,6 +5,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import TopBar from './components/top-bar';
 import Place from './pages/place';
+import Event from './pages/event';
 import Footer from './components/footer';
 import { theme } from './mui/theme';
 
@@ -16,6 +17,7 @@ class App extends Component {
         <TopBar />
           <Switch>
             <Route exact path="/p" component={Place} />
+            <Route exact path="/e" component={Event} />
           </Switch>
         <Footer />
       </MuiThemeProvider>
