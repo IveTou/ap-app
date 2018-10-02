@@ -15,8 +15,9 @@
       alignItems: 'center',
       flexGrow: 1,
       paddingBottom: theme.spacing.unit * 2,
+      paddingTop: theme.spacing.unit * 2,
       [theme.breakpoints.down('xs')]: {
-        paddingTop: theme.spacing.unit * 2,
+        paddingTop: 0,
         paddingBottom: theme.spacing.unit,
         flexDirection: 'row-reverse',
       }

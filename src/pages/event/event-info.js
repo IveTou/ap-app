@@ -14,7 +14,7 @@ export const eventInfo = {
     avatar: 'https://scontent.fssa2-1.fna.fbcdn.net/v/t1.0-9/32105083_1461921467240717_2863832073544663040_n.jpg?_nc_cat=0&oh=3c7f14d76ec0017e7025a183c3df36d5&oe=5BD73AD3',
     name: 'Guhan\'s Cowork House',
     url: '/',
-    openAt: '7h as 18h',
+    openAt: 'Aberto às terças e quintas, das 14h às 19h',
     capacity: 300,
     location: {
       address: 'Largo da dinha, Rio Vermelho, Salvador - BA',

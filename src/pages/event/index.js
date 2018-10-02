@@ -59,11 +59,6 @@ class Event extends React.Component {
                   <div>
                     <ListItem className={classes.listItem}>
                       <Typography variant="body1" className={classes.listItemText}>
-                        Aberto das {place.openAt}
-                      </Typography>
-                    </ListItem>
-                    <ListItem className={classes.listItem}>
-                      <Typography variant="body1" className={classes.listItemText}>
                         Capacidade: {place.capacity} pessoas
                       </Typography>
                     </ListItem>
