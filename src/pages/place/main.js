@@ -14,6 +14,7 @@ const Main = ({ classes, showComments, content = {} }) => {
   const {
     avatar,
     name,
+    capacity,
     description,
     location,
     openAt,
@@ -36,10 +37,13 @@ const Main = ({ classes, showComments, content = {} }) => {
               </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
-              <Typography variant="body1" className={classes.listItemText}>{location.address}</Typography>
+              <Typography variant="body1" className={classes.listItemText}>Capacidade: {capacity} pessoas</Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
               <Typography variant="body1" className={classes.listItemText}>{openAt}</Typography>
+            </ListItem>
+            <ListItem className={classes.listItem}>
+              <Typography variant="body1" className={classes.listItemText}>{location.address}</Typography>
             </ListItem>
           </List>
           <div className={classes.map}>
