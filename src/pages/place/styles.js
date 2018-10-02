@@ -84,8 +84,8 @@
       paddingLeft: theme.spacing.unit,
     },
     avatar: {
-      height: theme.spacing.unit * 3,
-      width: theme.spacing.unit * 3,
+      height: theme.spacing.unit * 4,
+      width: theme.spacing.unit * 4,
     },
     map: {
       padding: theme.spacing.unit,
