@@ -7,6 +7,7 @@ export const withIndexStyle = withStyles(theme => ({
   root: {
     height: theme.spacing.unit * 50,
     position: 'relative',
+    borderRadius: theme.spacing.unit / 2,
   },
   mini: {
     height: theme.spacing.unit * 17,

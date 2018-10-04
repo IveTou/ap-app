@@ -15,7 +15,7 @@
       alignItems: 'center',
       flexGrow: 1,
       paddingBottom: theme.spacing.unit * 2,
-      paddingTop: theme.spacing.unit * 2,
+      paddingTop: theme.spacing.unit,
       [theme.breakpoints.down('xs')]: {
         paddingTop: 0,
         paddingBottom: theme.spacing.unit,
@@ -43,5 +43,6 @@
     map: {
       padding: theme.spacing.unit,
       paddingRight: 0,
+      borderRadius: theme.spacing.unit / 2,
     },
 }));

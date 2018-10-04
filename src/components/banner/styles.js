@@ -5,6 +5,7 @@ const calendarBorder = '2px solid rgba(255, 255, 255,.26)';
 export const withIndexStyle = withStyles(theme => ({
   root: {
     backgroundColor: theme.palette.primary.light,
+    borderRadius: theme.spacing.unit / 2,
     width: '100%',
     height: theme.spacing.unit * 40,
     backgroundRepeat: 'no-repeat',
@@ -25,6 +26,7 @@ export const withIndexStyle = withStyles(theme => ({
   overlay: {
     height: '100%',
     minWidth: '60%',
+    borderRadius: theme.spacing.unit / 2,
     backgroundColor: theme.palette.action.active,
     color: theme.palette.grey[50],
     padding: theme.spacing.unit * 2,
