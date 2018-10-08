@@ -36,7 +36,8 @@
       fontWeight: theme.typography.fontWeightLight,
     },
     title: {
-      paddingBottom: theme.spacing.unit,
+      paddingBottom: theme.spacing.unit * 3,
+      paddingTop: theme.spacing.unit * 2,
     },
     avatar: {
       height: theme.spacing.unit * 4,
@@ -47,10 +48,12 @@
       marginBottom: theme.spacing.unit * 4,
     },
     prices: {
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down('sm')]: {
         borderTop: `2px solid ${theme.palette.grey[200]}`,
       },
       borderBottom: `2px solid ${theme.palette.grey[200]}`,
+      paddingBottom: theme.spacing.unit * 4,
+      marginBottom: theme.spacing.unit * 2,
     },
     chip: {
       marginRight: theme.spacing.unit,
