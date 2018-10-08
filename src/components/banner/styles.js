@@ -14,6 +14,7 @@ export const withIndexStyle = withStyles(theme => ({
     position: 'relative',
     display: 'block',
     [theme.breakpoints.down('sm')]: {
+      height: theme.spacing.unit * 36,
       backgroundColor: theme.palette.secondary.main,
     },
   },
