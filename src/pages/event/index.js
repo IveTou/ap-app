@@ -30,14 +30,10 @@ class Event extends React.Component {
         <div className={classes.contentWrapper}> 
           <Grid container spacing={24}>
             <Grid item md={8} xs={12}>
-              SNAP
+              <Typography variant="title">Sobre</Typography>
+              <Typography variant="subheading" dangerouslySetInnerHTML={{ __html: description }}/>
             </Grid>
-            <Grid item md={4} xs={12}>
-              RADIO
-            </Grid>
-            <Grid item md={8} xs={12}>
-              CHAT
-            </Grid>
+    
             <Grid item md={4} xs={12}>
               <List dense>
                 <ListItem className={classes.listItem}>
@@ -72,6 +68,9 @@ class Event extends React.Component {
               <div className={classes.map}>
                 <Wrapper mini center={location.coordinates} centerMarker />
               </div>
+            </Grid>
+            <Grid item md={4} xs={12}>
+              PREÇOS
             </Grid>
           </Grid>  
         </div>
