@@ -6,6 +6,16 @@ export const eventInfo = {
   description: '<p>Pelo quinto ano consecultivo as organizações Degrish promovem  a famigerada Halloween Degrish Party 2018</p><p>Como novidade, esta edição será realizada no espaço Refúgio Cowork</p>',
   flyer: `${config.ASSETS_BASE_URI}/${config.ASSETS_BANNERS_PATH}/escape.jpg`,
   categories: ['balada','música','cultura','louge'],
+  prices: [
+    {
+      description: 'Inteira',
+      value: 40.00,
+    },
+    {
+      description: 'Meia',
+      value: 20.00,
+    },
+  ],
   location: {
     address: 'Largo da dinha, Rio Vermelho, Salvador - BA',
     coordinates: { lat: -13.011441, lng: -38.491617 },

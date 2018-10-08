@@ -35,10 +35,25 @@
       minHeight: theme.spacing.unit * 3,
       fontWeight: theme.typography.fontWeightLight,
     },
+    title: {
+      paddingBottom: theme.spacing.unit,
+    },
     avatar: {
       height: theme.spacing.unit * 4,
       width: theme.spacing.unit * 4,
       margin: `0 ${theme.spacing.unit}px`,
+    },
+    description: {
+      marginBottom: theme.spacing.unit * 4,
+    },
+    prices: {
+      [theme.breakpoints.down('xs')]: {
+        borderTop: `2px solid ${theme.palette.grey[200]}`,
+      },
+      borderBottom: `2px solid ${theme.palette.grey[200]}`,
+    },
+    chip: {
+      marginRight: theme.spacing.unit,
     },
     map: {
       padding: theme.spacing.unit,
