@@ -4,7 +4,6 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 import { Link } from 'react-router-dom';
 import { Avatar, ListItem, ListItemText, Typography } from '@material-ui/core/';
-import { withRouter } from 'react-router';
 
 import { withIndexStyle } from './styles';
 

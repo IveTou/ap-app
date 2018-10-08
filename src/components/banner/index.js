@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, List, ListItem, Popover, Typography } from '@material-ui/core/';
+import { Button, List, ListItem, Typography } from '@material-ui/core/';
 import { upperFirst } from 'lodash';
 import classNames from 'classnames';
 import moment from 'moment';

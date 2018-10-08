@@ -7,7 +7,6 @@ import 'moment/locale/pt-br';
 
 import {
   Button,
-  Grid,
   GridList,
   GridListTile,
   Icon,
