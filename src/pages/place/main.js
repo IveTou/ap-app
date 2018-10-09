@@ -26,7 +26,7 @@ const Main = ({ classes, showComments, content = {} }) => {
     <div className={classes.root}>
       <Grid container spacing={24}>
         <Grid item md={8} xs={12}>
-          <Banner mini />
+          <Banner />
         </Grid>
         <Grid item md={4} xs={12}>
           <List dense>

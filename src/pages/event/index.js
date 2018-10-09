@@ -15,7 +15,7 @@ import {
   Typography
 } from '@material-ui/core/';
 
-import Banner from '../../components/banner';
+import Billboard from '../../components/billboard';
 import Wrapper from '../../components/map';
 
 import { eventInfo } from './event-info';
@@ -36,7 +36,7 @@ class Event extends React.Component {
     return (
       <div className={classes.root}>
         <div className={classes.header}>
-          <Banner content={bannerContent} />
+          <Billboard content={bannerContent} />
         </div>
 
         <div> 
