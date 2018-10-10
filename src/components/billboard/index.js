@@ -36,10 +36,10 @@ const Billboard = ({ classes, content = defaultContent }) => {
   
   return(
     <Grid container className={classes.root} >
-      <Grid  item md={6} sm={12}>
-        <div style={{ background: `url:(${flyer})` }} className={classes.flyer} />
+      <Grid  item md={6} sm={12} xs={12}>
+        <div style={{ backgroundImage: `url('${flyer}')` }} className={classes.flyer} />
       </Grid>  
-      <Grid item md={6} sm={12} className={classes.contentWrap}>
+      <Grid item md={6} sm={12} xs={12} className={classes.contentWrap}>
         <div className={classes.content}>
           <Typography
             color="inherit"
@@ -80,7 +80,7 @@ const Billboard = ({ classes, content = defaultContent }) => {
           <Typography variant="title" color="primary" className={classes.people}>
             38 pessoas presentes
           </Typography>
-          <Button variant="contained" color="primary">
+          <Button variant="contained" color="primary" size="small">
             Tenho Interesse
           </Button>  
         </div>  

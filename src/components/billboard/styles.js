@@ -10,8 +10,10 @@ export const withIndexStyle = withStyles(theme => ({
   flyer: {
     height: '100%',
     width: '100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     [theme.breakpoints.down('sm')]: {
-      height: theme.spacing.unit * 30,
+      height: theme.spacing.unit * 24,
     }
   },
   contentWrap: {
@@ -52,6 +54,10 @@ export const withIndexStyle = withStyles(theme => ({
   },
   people: {
     paddingTop: theme.spacing.unit,
+    fontSize: theme.typography.title.fontSize,
     textShadow: `1px 1px 1px ${theme.palette.grey[300]}`,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: theme.typography.subheading.fontSize,
+    },
   },
 }));
