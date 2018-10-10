@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, List, ListItem, ListItemText, Typography } from '@material-ui/core/';
+import { Grid, List, ListItem, ListItemText, Typography, Button } from '@material-ui/core/';
 import { upperFirst } from 'lodash';
 import moment from 'moment';
 import 'moment/locale/pt-br';
@@ -33,15 +33,18 @@ const Billboard = ({ classes, content = defaultContent }) => {
   const { location } = place || content;
   const startMoment = start && moment(start);
   const timeStatus = timeRender(start, end);
-
+  
   return(
     <Grid container className={classes.root} >
-      <Grid className={classes.flyer} item md={6} sm={12} style={{ backgroundImage: `url('${flyer}')` }} />
-      <Grid item md={6} sm={12}>
+      <Grid  item md={6} sm={12}>
+        <div style={{ background: `url:(${flyer})` }} className={classes.flyer} />
+      </Grid>  
+      <Grid item md={6} sm={12} className={classes.contentWrap}>
         <div className={classes.content}>
           <Typography
             color="inherit"
             variant="display1"
+            className={classes.title}
             gutterBottom
           >
             {title}
@@ -65,15 +68,21 @@ const Billboard = ({ classes, content = defaultContent }) => {
               </ListItem> 
               <ListItem>
                 <ListItemText 
-                  primary={}
-                  secondary={}
-                  className={classes.listItemText}
+                  primary={`${startMoment.format(' HH:mm')}h`}
+                  secondary={timeStatus.content}
+                  className={classes.inlineListItemText}
                 />
               </ListItem>  
             </List>
           </div>
         </div>  
         <div className={classes.actions}>
+          <Typography variant="title" color="primary" className={classes.people}>
+            38 pessoas presentes
+          </Typography>
+          <Button variant="contained" color="primary">
+            Tenho Interesse
+          </Button>  
         </div>  
       </Grid>
     </Grid>

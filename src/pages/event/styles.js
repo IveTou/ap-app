@@ -4,11 +4,14 @@
     root: {
       flexGrow: 1,
       maxWidth: theme.spacing.unit * 137,
-      padding: `0 ${theme.spacing.unit * 3}px`,
       margin: '0 auto',
       display: 'grid',
       alignItems: 'center',
       marginBottom: theme.spacing.unit * 8,
+      padding: `0 ${theme.spacing.unit * 3}px`,
+      [theme.breakpoints.down('sm')]: {
+        padding: 0,
+      },
     },
     header: {
       display: 'inline-flex',
@@ -20,6 +23,11 @@
         paddingTop: 0,
         paddingBottom: theme.spacing.unit,
         flexDirection: 'row-reverse',
+      }
+    },
+    content: {
+      [theme.breakpoints.down('sm')]: {
+        padding: `0 ${theme.spacing.unit * 2}px`,
       }
     },
     listItem: {

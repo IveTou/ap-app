@@ -39,79 +39,77 @@ class Event extends React.Component {
           <Billboard content={bannerContent} />
         </div>
 
-        <div> 
-          <Grid container spacing={24}>
-            <Grid item md={8} xs={12}>
-              <div className={classes.description}>
-                <Typography variant="title" className={classes.title}>Sobre</Typography>
-                <Typography variant="subheading" dangerouslySetInnerHTML={{ __html: description }}/>
-              </div>
-              <div className={classes.categories}>
-                {map(categories, categorie => 
-                  <Chip label={categorie} className={classes.chip}/>
+        <Grid container spacing={24} className={classes.content}>
+          <Grid item md={8} xs={12}>
+            <div className={classes.description}>
+              <Typography variant="title" className={classes.title}>Sobre</Typography>
+              <Typography variant="subheading" dangerouslySetInnerHTML={{ __html: description }}/>
+            </div>
+            <div className={classes.categories}>
+              {map(categories, categorie => 
+                <Chip label={categorie} className={classes.chip}/>
+              )}
+            </div>
+          </Grid>
+          
+          <Grid item md={4} xs={12}>
+            <div className={classes.prices}>
+              <Typography variant="title" className={classes.title}>Entradas</Typography>
+              <GridList cellHeight="auto">
+                {map(prices, priceItem => 
+                  <GridListTile
+                    key={`${priceItem.description}${priceItem.value}`}
+                  >
+                    <ListItemText
+                      style={{ paddingLeft: 16 }}
+                      primary={priceItem.description}
+                      secondary={`R$ ${priceItem.value}`}
+                    />
+                  </GridListTile>
                 )}
-              </div>
-            </Grid>
-            
-            <Grid item md={4} xs={12}>
-              <div className={classes.prices}>
-                <Typography variant="title" className={classes.title}>Entradas</Typography>
-                <GridList cellHeight="auto">
-                  {map(prices, priceItem => 
-                    <GridListTile
-                      key={`${priceItem.description}${priceItem.value}`}
-                    >
-                      <ListItemText
-                        style={{ paddingLeft: 16 }}
-                        primary={priceItem.description}
-                        secondary={`R$ ${priceItem.value}`}
-                      />
-                    </GridListTile>
-                  )}
-                </GridList>
-              </div>
+              </GridList>
+            </div>
 
-              <List dense>
-                <ListItem className={classes.listItem}>
-                  <Avatar src={place && place.avatar} className={classes.avatar}/>
-                  <Typography variant="subheading" color="primary" className={classes.title}>
-                    {place && place.name} 
-                    <Button 
-                      className={classes.button}
-                      variant="outlined" 
-                      size="small"
-                      color="primary"
-                    >
-                      Seguir
-                    </Button>
-                  </Typography>
-                </ListItem>
-      
-                {place && (
-                  <div>
-                    <ListItem className={classes.listItem}>
-                      <Typography variant="body1" className={classes.listItemText}>
-                        Capacidade: {place.capacity} pessoas
-                      </Typography>
-                    </ListItem>
-                  </div>
-                )}
-                
-                <ListItem className={classes.listItem}>
-                  <Typography variant="body1" className={classes.listItemText}>{(place && place.location.adress) || location.address}</Typography>
-                </ListItem>
-              </List>
-              <div className={classes.map}>
-                <Wrapper mini center={location.coordinates} centerMarker />
-              </div>
-            </Grid>
-            <Grid item md={8} xs={12}>
-            </Grid>
-            <Grid item md={4} xs={12}>
+            <List dense>
+              <ListItem className={classes.listItem}>
+                <Avatar src={place && place.avatar} className={classes.avatar}/>
+                <Typography variant="subheading" color="primary" className={classes.title}>
+                  {place && place.name} 
+                  <Button 
+                    className={classes.button}
+                    variant="outlined" 
+                    size="small"
+                    color="primary"
+                  >
+                    Seguir
+                  </Button>
+                </Typography>
+              </ListItem>
+    
+              {place && (
+                <div>
+                  <ListItem className={classes.listItem}>
+                    <Typography variant="body1" className={classes.listItemText}>
+                      Capacidade: {place.capacity} pessoas
+                    </Typography>
+                  </ListItem>
+                </div>
+              )}
               
-            </Grid>
-          </Grid>  
-        </div>
+              <ListItem className={classes.listItem}>
+                <Typography variant="body1" className={classes.listItemText}>{(place && place.location.adress) || location.address}</Typography>
+              </ListItem>
+            </List>
+            <div className={classes.map}>
+              <Wrapper mini center={location.coordinates} centerMarker />
+            </div>
+          </Grid>
+          <Grid item md={8} xs={12}>
+          </Grid>
+          <Grid item md={4} xs={12}>
+            
+          </Grid>
+        </Grid>  
       </div>
     );
   }
