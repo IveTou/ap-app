@@ -19,10 +19,11 @@ export const withIndexStyle = withStyles(theme => ({
   overlay: {
     height: '100%',
     width: '50%',
+    textAlign: 'right',
     borderRadius: theme.spacing.unit / 2,
     backgroundColor: theme.palette.action.active,
     color: theme.palette.grey[50],
-    padding: theme.spacing.unit,
+    padding: theme.spacing.unit * 2,
     display: 'inline-block',
     float: 'right',
     [theme.breakpoints.down('xs')]: {
@@ -35,6 +36,7 @@ export const withIndexStyle = withStyles(theme => ({
     whiteSpace: 'normal',
     maxHeight: '50%',
     fontSize: theme.typography.display1.fontSize,
+    paddingRight: theme.spacing.unit,
     [theme.breakpoints.down('sm')]: {
       fontSize: theme.typography.headline.fontSize,
     },
