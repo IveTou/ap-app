@@ -16,6 +16,7 @@ import {
 } from '@material-ui/core/';
 
 import Billboard from '../../components/billboard';
+import Stories from '../../components/stories';
 import Wrapper from '../../components/map';
 
 import { eventInfo } from './event-info';
@@ -37,6 +38,7 @@ class Event extends React.Component {
       <div className={classes.root}>
         <div className={classes.header}>
           <Billboard content={bannerContent} />
+          <Stories />
         </div>
 
         <Grid container spacing={24} className={classes.content}>
