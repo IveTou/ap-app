@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
 import { map } from 'lodash';
-import moment from 'moment';
-import 'moment/locale/pt-br';
 import { 
   Avatar, 
   Button, 
@@ -18,7 +16,6 @@ import {
 } from '@material-ui/core/';
 
 import Billboard from '../../components/billboard';
-import Stories from '../../components/stories';
 import Wrapper from '../../components/map';
 
 import { eventInfo } from './event-info';
@@ -32,7 +29,7 @@ class Event extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
-    this.state = { isLoading: true, story: [] };
+    this.state = { isLoading: true, stories: [] };
   }
 
   componentDidMount() {
@@ -53,16 +50,11 @@ class Event extends React.Component {
     const { classes } = this.props;
     const { title, subtitle, description, flyer, categories, place, location, start, end, prices } = eventInfo;
     const bannerContent = { title, subtitle, flyer, start, end, location, place };
-    const now = moment();
-    const isNow = start <= now && end >= now;
 
     return (
       <div className={classes.root}>
         <div className={classes.header}>
-          {(!isNow || isLoading) &&
-            <Billboard content={bannerContent} isLoading={isLoading} />
-          }
-          {!isLoading && isNow && <Stories content={stories}/>}
+            <Billboard content={bannerContent} isLoading={isLoading} stories={stories} />
         </div>
 
         <Grid container spacing={24} className={classes.content}>

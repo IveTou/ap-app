@@ -10,7 +10,7 @@ class Stories extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
-    this.state = { isFullScreen: false, stories: [] };
+    this.state = { isFullScreen: false };
   }
 
   changeScreen() {
@@ -19,28 +19,22 @@ class Stories extends React.Component {
 
   render() {
     const { classes, content } = this.props;
-    const { isFullScreen, stories } = this.state;
-    console.log(stories);
+    const { isFullScreen } = this.state;
+    console.log(content);
 
     return(
-      <Grid container className={classes.root}>
-        <Grid  item md={6} sm={12} xs={12} className={classes.stage}>
-          <Button onClick={this.changeScreen} variant="fab" aria-label="Tela Inteira" className={classes.button}>
-            <Icon className={classes.icon}>{isFullScreen ? 'fullscreen_exit' : 'fullscreen'}</Icon>
-          </Button>
-        </Grid>
-        <Grid item md={6} sm={12} xs={12}>
-        Algo 
-        </Grid>
-      </Grid>
+      <div className={classes.root}>
+        <Button onClick={this.changeScreen} variant="fab" aria-label="Tela Inteira" className={classes.button}>
+          <Icon className={classes.icon}>{isFullScreen ? 'fullscreen_exit' : 'fullscreen'}</Icon>
+        </Button>
+      </div>
     );
   }
 }
 
 Event.propTypes = {
   classes: PropTypes.object,
-  content: PropTypes.object.isRequired,
-  stories: PropTypes.arrayOf(PropTypes.object),
+  content: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default withIndexStyle(Stories);

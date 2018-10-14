@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { 
   Button,
   CircularProgress, 
@@ -14,6 +13,7 @@ import moment from 'moment';
 import 'moment/locale/pt-br';
 
 import Calendar from '../calendar';
+import Stories from '../../components/stories';
 import config from '../../config';
 import { withIndexStyle } from './styles';
 
@@ -24,9 +24,7 @@ const defaultContent = {
   url: '/',
 };
 
-const timeRender = (start, end) => {
-  const now = moment();
-
+const timeRender = (now, start, end) => {
   if (end < now  || start > moment().add(4, 'hours')) {
     return null;
   }
@@ -36,25 +34,37 @@ const timeRender = (start, end) => {
     : { content: upperFirst(start.fromNow()), isNow: false };
 }
 
-const Billboard = ({ classes, content = defaultContent, isLoading }) => {
+const Billboard = ({ 
+  classes, 
+  content = defaultContent, 
+  isLoading,
+  stories, 
+}) => {
   const { title, subtitle, flyer, place, start, end, url } = content;
   const { location } = place || content;
+  const now = moment();
   const startMoment = start && moment(start);
-  const timeStatus = timeRender(start, end);
+  const timeStatus = timeRender(now, start, end);
+  const itsNow = start <= now && end >= now;
   
   return(
     <Grid container className={classes.root} >
       <Grid  item md={6} sm={12} xs={12}>
-        <div style={{ backgroundImage: `url('${flyer}')` }} className={classes.flyer}>
-        {isLoading &&
-          <CircularProgress 
-            className={classes.progress} 
-            color="primary"
-            size={70} 
-            thickness={7}
-          />
-        }
-        </div>
+        {!stories.length && (
+          <div style={{ backgroundImage: `url('${flyer}')` }} className={classes.flyer}>
+            {isLoading &&
+              <CircularProgress 
+                className={classes.progress} 
+                color="primary"
+                size={70} 
+                thickness={7}
+              />
+            }
+          </div>
+        )}
+        {!!stories.length && itsNow && (
+          <Stories content={stories} />
+        )}
       </Grid>  
       <Grid item md={6} sm={12} xs={12} className={classes.contentWrap}>
         <div className={classes.content}>
