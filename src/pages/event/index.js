@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
 import { map } from 'lodash';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 import { 
   Avatar, 
   Button, 
@@ -22,23 +24,45 @@ import Wrapper from '../../components/map';
 import { eventInfo } from './event-info';
 import { withIndexStyle } from './styles';
 
+import config from '../../config';
+
+const tag = 'toakee';
 
 class Event extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
+    this.state = { isLoading: true, story: [] };
+  }
+
+  componentDidMount() {
+    fetch(config.INSTAGRAM_API + `${tag}/media/recent?` + config.ACCESS_TOKEN)
+    .then(res => {
+      if(res.ok) {
+        return res.json();
+      } else {
+        throw new Error('Something went wrong ...');
+      }
+    })
+    .then(_ => this.setState({ isLoading: false, stories: _.data }))
+    .catch(err => console.log(err));
   }
 
   render() {
+    const { isLoading, stories } = this.state;
     const { classes } = this.props;
     const { title, subtitle, description, flyer, categories, place, location, start, end, prices } = eventInfo;
     const bannerContent = { title, subtitle, flyer, start, end, location, place };
+    const now = moment();
+    const isNow = start <= now && end >= now;
 
     return (
       <div className={classes.root}>
         <div className={classes.header}>
-          <Billboard content={bannerContent} />
-          <Stories />
+          {(!isNow || isLoading) &&
+            <Billboard content={bannerContent} isLoading={isLoading} />
+          }
+          {!isLoading && isNow && <Stories content={stories}/>}
         </div>
 
         <Grid container spacing={24} className={classes.content}>
@@ -49,7 +73,7 @@ class Event extends React.Component {
             </div>
             <div className={classes.categories}>
               {map(categories, categorie => 
-                <Chip label={categorie} className={classes.chip}/>
+                <Chip key={categorie} label={categorie} className={classes.chip}/>
               )}
             </div>
           </Grid>

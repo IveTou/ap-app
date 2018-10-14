@@ -12,6 +12,8 @@ export const withIndexStyle = withStyles(theme => ({
     width: '100%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
+    textAlign: 'center',
+    padding: theme.spacing.unit * 8,
     [theme.breakpoints.down('sm')]: {
       height: theme.spacing.unit * 24,
     }
@@ -60,4 +62,7 @@ export const withIndexStyle = withStyles(theme => ({
       fontSize: theme.typography.subheading.fontSize,
     },
   },
+  progress: {
+    margin: theme.spacing.unit * 2,
+  }
 }));

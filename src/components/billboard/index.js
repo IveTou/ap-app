@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, List, ListItem, ListItemText, Typography, Button } from '@material-ui/core/';
+import { 
+  Button,
+  CircularProgress, 
+  Grid, 
+  List, 
+  ListItem, 
+  ListItemText, 
+  Typography,  
+} from '@material-ui/core/';
 import { upperFirst } from 'lodash';
 import moment from 'moment';
 import 'moment/locale/pt-br';
@@ -28,7 +36,7 @@ const timeRender = (start, end) => {
     : { content: upperFirst(start.fromNow()), isNow: false };
 }
 
-const Billboard = ({ classes, content = defaultContent }) => {
+const Billboard = ({ classes, content = defaultContent, isLoading }) => {
   const { title, subtitle, flyer, place, start, end, url } = content;
   const { location } = place || content;
   const startMoment = start && moment(start);
@@ -37,7 +45,16 @@ const Billboard = ({ classes, content = defaultContent }) => {
   return(
     <Grid container className={classes.root} >
       <Grid  item md={6} sm={12} xs={12}>
-        <div style={{ backgroundImage: `url('${flyer}')` }} className={classes.flyer} />
+        <div style={{ backgroundImage: `url('${flyer}')` }} className={classes.flyer}>
+        {isLoading &&
+          <CircularProgress 
+            className={classes.progress} 
+            color="primary"
+            size={70} 
+            thickness={7}
+          />
+        }
+        </div>
       </Grid>  
       <Grid item md={6} sm={12} xs={12} className={classes.contentWrap}>
         <div className={classes.content}>
@@ -88,10 +105,5 @@ const Billboard = ({ classes, content = defaultContent }) => {
     </Grid>
   );
 }
-
-Billboard.propTypes = {
-  classes: PropTypes.object,
-  content: PropTypes.object,
-};
 
 export default withIndexStyle(Billboard);
