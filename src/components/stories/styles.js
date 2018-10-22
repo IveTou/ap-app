@@ -3,9 +3,15 @@ import { withStyles } from '@material-ui/core/';
 export const withIndexStyle = withStyles(theme => ({
   root: {
     width: '100%',
-    minHeight: theme.spacing.unit * 34,
+    height: theme.spacing.unit * 34,
     textAlign: 'end',
     background: theme.palette.common.black,
+    [theme.breakpoints.down('sm')]: {
+      height: theme.spacing.unit * 50,
+    }
+  },
+  storiesContainer: {
+    height: '100%',
   },
   backdrop: {
     backgroundColor: theme.palette.grey[900],
@@ -24,14 +30,12 @@ export const withIndexStyle = withStyles(theme => ({
     backgroundColor: 'transparent',
     color: theme.palette.common.white,
     boxShadow: 'none',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
-  modalButton: {
     position: 'relative',
     marginBottom: theme.spacing.unit * -8,
     zIndex: 1,
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
   },
   icon: {
     fontSize: theme.typography.display3.fontSize,
@@ -42,11 +46,21 @@ export const withIndexStyle = withStyles(theme => ({
   },
   swipeableViews: {
     height: '100%',
+    marginTop: theme.spacing.unit * -2,
+    padding: `${theme.spacing.unit * 2}px 0`,
+    '&>div': {
+      height: '100%',
+    }
   },
   views: {
     overflow: "hidden",
+    height: '100%',
     width: '98%',
     margin: `0 auto`,
+    backgroundOrigin: 'initial',
+    backgroundPosition: 'initial',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
   },
   img: {
     height: 'auto',
@@ -96,21 +110,5 @@ export const withIndexStyle = withStyles(theme => ({
     '&:hover': {
       backgroundColor: 'transparent',
     },
-  },
-  closeButton: {
-    margin: theme.spacing.unit * 2,
-    backgroundColor: 'transparent',
-    color: theme.palette.common.white,
-    boxShadow: 'none',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    zIndex: 1,
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    }
   },
 }));

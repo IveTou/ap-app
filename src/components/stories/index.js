@@ -39,7 +39,7 @@ class Stories extends React.Component {
     this.setState({ activeStep });
   };
 
-  renderStepper(content, classes, activeStep){
+  renderStepper(content, classes, activeStep, isFullScreen){
     return(
       <AutoPlaySwipeableViews
         enableMouseEvents
@@ -50,12 +50,16 @@ class Stories extends React.Component {
         className={classes.swipeableViews}
       >
         {content.map((step, index) => (
-          <div key={step.id} className={classes.views}>
-            <img
-              className={classes.img}
-              src={step.images.standard_resolution.url}
-            />
-          </div>
+          <div 
+            key={step.id} 
+            className={classes.views} 
+            style={{ 
+              backgroundImage: `url('${isFullScreen 
+                ? step.images.standard_resolution.url
+                : step.images.low_resolution.url}')`,
+              backgroundPosition: !isFullScreen && 'center'   
+            }}
+          />
         ))}
       </AutoPlaySwipeableViews>
     )
@@ -65,14 +69,14 @@ class Stories extends React.Component {
     const { classes, content } = this.props;
     const { isFullScreen, activeStep } = this.state;
     const maxSteps = content.length;
-    const buttonClasses = classNames(classes.button, isFullScreen && classes.modalButton);
 
     return(
       <div className={classes.root}>
-        <div>
+        <div className={classes.storiesContainer}>
           <Button onClick={this.handleScreenModeChange} variant="fab" aria-label="Tela Inteira" className={classes.button}>
             <Icon className={classes.icon}>{isFullScreen ? 'fullscreen_exit' : 'fullscreen'}</Icon>
           </Button>
+          {this.renderStepper(content, classes, activeStep)}
         </div>
         <Modal
           disableBackdropClick
@@ -83,7 +87,7 @@ class Stories extends React.Component {
           BackdropProps={{ classes: { root: classes.backdrop } }}
         >
           <Paper className={classes.paper}>
-            <Button onClick={this.handleScreenModeChange} variant="fab" aria-label="Tela Inteira" className={buttonClasses}>
+            <Button onClick={this.handleScreenModeChange} variant="fab" aria-label="Tela Inteira" className={classes.button}>
               <Icon className={classes.icon}>{isFullScreen ? 'fullscreen_exit' : 'fullscreen'}</Icon>
             </Button>
             <div className={classes.arrows}>
@@ -106,15 +110,9 @@ class Stories extends React.Component {
                 <Icon className={classes.icon}>arrow_forward_ios</Icon>
               </Button>
             </div>
-            <Button 
-                onClick={this.handleScreenModeChange}
-                variant="fab"
-                aria-label="Fechar Tela"
-                className={classes.closeButton}
-              >
-                <Icon className={classes.icon}>close</Icon>
-              </Button>
-            {this.renderStepper(content, classes, activeStep)}
+            
+            {this.renderStepper(content, classes, activeStep, isFullScreen)}
+            
             <MobileStepper
               steps={maxSteps}
               variant="dots"
