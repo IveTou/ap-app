@@ -8,7 +8,7 @@ export const withIndexStyle = withStyles(theme => ({
     background: theme.palette.grey[200],
   },
   flyer: {
-    height: '100%',
+    minHeight: theme.spacing.unit * 34,
     width: '100%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',

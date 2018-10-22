@@ -50,7 +50,7 @@ const Billboard = ({
   return(
     <Grid container className={classes.root} >
       <Grid  item md={6} sm={12} xs={12}>
-        {!stories.length && (
+        {(!stories.length || !itsNow  || isLoading) && (
           <div style={{ backgroundImage: `url('${flyer}')` }} className={classes.flyer}>
             {isLoading &&
               <CircularProgress 
@@ -96,7 +96,7 @@ const Billboard = ({
               <ListItem>
                 <ListItemText 
                   primary={`${startMoment.format(' HH:mm')}h`}
-                  secondary={timeStatus.content}
+                  secondary={timeStatus && timeStatus.content}
                   className={classes.inlineListItemText}
                 />
               </ListItem>  
@@ -105,7 +105,7 @@ const Billboard = ({
         </div>  
         <div className={classes.actions}>
           <Typography variant="title" color="primary" className={classes.people}>
-            38 pessoas presentes
+            {itsNow && `38 pessoas presentes`}
           </Typography>
           <Button variant="contained" color="primary" size="small">
             Tenho Interesse

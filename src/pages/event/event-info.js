@@ -31,8 +31,8 @@ export const eventInfo = {
       coordinates: { lat: -13.011441, lng: -38.491617 },
     },
   },
-  start: new Date(),
-  end: new Date("July 12, 2019 01:15:00"),
+  start: new Date("July 12, 2018 01:15:00"),
+  end: new Date("July 13, 2019 01:15:00"),
   followedBy: [ '9', '3', '12' ],
   url: '/',
 };
